@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="Model\LinkedList\LinkedList.cs" />
     <Compile Include="Model\LinkedList\LinkedListItem.cs" />
+    <Compile Include="Model\Stack\BaseStack.cs" />
+    <Compile Include="Model\Stack\LinkedStack.cs" />
+    <Compile Include="Model\Stack\ArrayStack.cs" />
+    <Compile Include="Model\Stack\Stack.cs" />
+    <Compile Include="Model\Stack\StackItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

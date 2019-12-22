@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyDataStructures.Model
+namespace MyDataStructures.Model.LinkedList
 {
     /// <summary>
     /// Односвязный список.
     /// </summary>
-    public class LinkedList<T> : IEnumerable<T>
+    public class LinkedList<T> : IEnumerable<T> 
     {
         /// <summary>
         /// Первый элемент списка.
@@ -22,6 +22,8 @@ namespace MyDataStructures.Model
         /// Количество элементов в списке.
         /// </summary>
         public int Count { get; private set; }
+        public int LastIndex => Count - 1;
+        public bool IsEmpty => Count <= 0;
         /// <summary>
         /// Создать пустой список.
         /// </summary>
@@ -83,6 +85,9 @@ namespace MyDataStructures.Model
                 SetHeadAndTail(data);
             }
         }
+        /// <summary>
+        /// Добавить после.
+        /// </summary>
         public void InsertAfter(T target,T data)
         {
             if (Head != null)
@@ -110,7 +115,7 @@ namespace MyDataStructures.Model
         /// <summary>
         /// Удалить один элемент.
         /// </summary>
-        public void DeleteFirst(T data)
+        public void Delete(T data)
         {
             if(Head != null)
             {
