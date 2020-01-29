@@ -43,8 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\LinkedList\CircularLinkedList.cs" />
+    <Compile Include="Model\LinkedList\DoublyLinkedList.cs" />
+    <Compile Include="Model\LinkedList\DoublyLinkedListItem.cs" />
     <Compile Include="Model\LinkedList\LinkedList.cs" />
     <Compile Include="Model\LinkedList\LinkedListItem.cs" />
+    <Compile Include="Model\Queue\ArrayQueue.cs" />
+    <Compile Include="Model\Queue\Deque.cs" />
+    <Compile Include="Model\Queue\LinkedDeque.cs" />
+    <Compile Include="Model\Queue\LinkedQueue.cs" />
+    <Compile Include="Model\Queue\Queue.cs" />
     <Compile Include="Model\Stack\BaseStack.cs" />
     <Compile Include="Model\Stack\LinkedStack.cs" />
     <Compile Include="Model\Stack\ArrayStack.cs" />
@@ -56,5 +64,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

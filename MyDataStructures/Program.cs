@@ -1,6 +1,7 @@
 ﻿using System;
 using MyDataStructures.Model;
 using MyDataStructures.Model.LinkedList;
+using MyDataStructures.Model.Queue;
 using MyDataStructures.Model.Stack;
 
 namespace MyDataStructures
@@ -43,6 +44,39 @@ namespace MyDataStructures
                 Console.Write(item + ",");
             }
             Console.WriteLine();
+            #endregion
+            #region DoublyLinkedList
+            Console.WriteLine("DoublyLinkedList");
+            var DoublyList1 = new DoublyLinkedList<int>(1);
+            DoublyList1.Add(2);
+            DoublyList1.Add(3);
+            DoublyList1.Add(4);
+            DoublyList1.Add(5);
+            DoublyList1[4] = 0;
+            DoublyList1.Delete(1);
+            foreach (var item in DoublyList1)
+            {
+                Console.WriteLine(item);
+            }
+            DoublyList1 = DoublyList1.Reverse();
+            foreach (var item in DoublyList1)
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
+            #region CircularLinkedList
+            Console.WriteLine("CircularLinkedList");
+            var CircularList1 = new CircularLinkedList<int>(0);
+            CircularList1.Add(1);
+            CircularList1.Add(2);
+            CircularList1.Add(3);
+            CircularList1.Add(4);
+            //CircularList1.Delete(1);          
+            foreach (var item in CircularList1)
+            {
+                Console.WriteLine(item);
+            }
+
             #endregion
             #endregion
             #region Stack
@@ -87,6 +121,77 @@ namespace MyDataStructures
             stack2.Push(2);
             Console.WriteLine(stack2.Pop());
             Console.WriteLine(stack2.Pop());
+            #endregion
+            #endregion
+            #region Queue
+            #region Queue
+            Console.WriteLine("Queue");
+            var queue1 = new Queue<int>();
+            queue1.Enqueue(1);
+            queue1.Enqueue(2);
+            queue1.Enqueue(3);
+            Console.WriteLine(queue1.Dequeue());
+            Console.WriteLine(queue1.Peek());
+            Console.WriteLine(queue1.Dequeue());
+            Console.WriteLine(queue1.Dequeue());
+            #endregion
+            #region ArrayQueue
+            Console.WriteLine("ArrayQueue");
+            var ArrayQueue1 = new ArrayQueue<int>(2,2);
+            ArrayQueue1.Enqueue(1);
+            ArrayQueue1.Enqueue(2);
+            ArrayQueue1.Enqueue(3);            
+            ArrayQueue1.Enqueue(4);
+            Console.WriteLine("Capacity -> " + ArrayQueue1.Capacity);
+            Console.WriteLine(ArrayQueue1.Dequeue());
+            Console.WriteLine(ArrayQueue1.Peek());
+            Console.WriteLine(ArrayQueue1.Dequeue());
+            Console.WriteLine(ArrayQueue1.Dequeue());
+            Console.WriteLine(ArrayQueue1.Dequeue());
+            Console.WriteLine("Capacity -> " + ArrayQueue1.Capacity);
+            #endregion
+            #region LinkedQueue
+            Console.WriteLine("LinkedQueue");
+            var linkedQueue1 = new LinkedQueue<int>();
+            linkedQueue1.Enqueue(1);
+            linkedQueue1.Enqueue(2);
+            linkedQueue1.Enqueue(3);
+            Console.WriteLine(linkedQueue1.Dequeue());
+            Console.WriteLine(linkedQueue1.Peek());
+            Console.WriteLine(linkedQueue1.Dequeue());
+            Console.WriteLine(linkedQueue1.Dequeue());
+            #endregion
+            #region Deque
+            Console.WriteLine("Deque");
+            var Deque = new Deque<int>();
+            Deque.PushBack(1);
+            Deque.PushBack(2);
+            Deque.PushBack(3);
+            Deque.PushFront(4);
+            Deque.PushFront(5);
+            Deque.PushFront(6);
+            Console.WriteLine(Deque.PopFront());
+            Console.WriteLine(Deque.PopFront());
+            Console.WriteLine(Deque.PopFront());
+            Console.WriteLine(Deque.PopBack());
+            Console.WriteLine(Deque.PopBack());
+            Console.WriteLine(Deque.PopBack());
+            #endregion
+            #region LinkedDeque
+            Console.WriteLine("LinkedDeque");
+            var LinkedDeque = new LinkedDeque<int>();
+            LinkedDeque.PushBack(1);
+            LinkedDeque.PushBack(2);
+            LinkedDeque.PushBack(3);
+            LinkedDeque.PushFront(4);
+            LinkedDeque.PushFront(5);
+            LinkedDeque.PushFront(6);
+            Console.WriteLine(LinkedDeque.PopFront());
+            Console.WriteLine(LinkedDeque.PopFront());
+            Console.WriteLine(LinkedDeque.PopFront());
+            Console.WriteLine(LinkedDeque.PopBack());
+            Console.WriteLine(LinkedDeque.PopBack());
+            Console.WriteLine(LinkedDeque.PopBack());
             #endregion
             #endregion
         }

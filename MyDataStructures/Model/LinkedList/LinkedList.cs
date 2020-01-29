@@ -205,12 +205,7 @@ namespace MyDataStructures.Model.LinkedList
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
-            var current = Head;
-            while (current != null)
-            {
-                yield return current.Data;
-                current = current.Next;
-            }
+            return GetEnumerator();
         }
         public override string ToString()
         {
