@@ -2,6 +2,7 @@
 using MyDataStructures.Model;
 using MyDataStructures.Model.LinkedList;
 using MyDataStructures.Model.Queue;
+using MyDataStructures.Model.Set;
 using MyDataStructures.Model.Stack;
 
 namespace MyDataStructures
@@ -47,11 +48,13 @@ namespace MyDataStructures
             #endregion
             #region DoublyLinkedList
             Console.WriteLine("DoublyLinkedList");
-            var DoublyList1 = new DoublyLinkedList<int>(1);
-            DoublyList1.Add(2);
-            DoublyList1.Add(3);
-            DoublyList1.Add(4);
-            DoublyList1.Add(5);
+            var DoublyList1 = new DoublyLinkedList<int>(1)
+            {
+                2,
+                3,
+                4,
+                5
+            };
             DoublyList1[4] = 0;
             DoublyList1.Delete(1);
             foreach (var item in DoublyList1)
@@ -66,11 +69,13 @@ namespace MyDataStructures
             #endregion
             #region CircularLinkedList
             Console.WriteLine("CircularLinkedList");
-            var CircularList1 = new CircularLinkedList<int>(0);
-            CircularList1.Add(1);
-            CircularList1.Add(2);
-            CircularList1.Add(3);
-            CircularList1.Add(4);
+            var CircularList1 = new CircularLinkedList<int>(0)
+            {
+                1,
+                2,
+                3,
+                4
+            };
             //CircularList1.Delete(1);          
             foreach (var item in CircularList1)
             {
@@ -193,6 +198,40 @@ namespace MyDataStructures
             Console.WriteLine(LinkedDeque.PopBack());
             Console.WriteLine(LinkedDeque.PopBack());
             #endregion
+            #endregion
+            #region Set
+            Console.WriteLine("Set");
+            var set1 = new Set<int>();
+            set1.Add(1);
+            set1.Add(2);
+            set1.Add(3);
+            var set2 = new Set<int>();
+            set2.Add(2);
+            set2.Add(3);
+            set2.Add(4);
+            Console.WriteLine(" Union");
+            foreach (var item in set1.Union(set2))
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(" Intersection");
+            foreach (var item in set1.Intersection(set2))
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(" Difference");
+            foreach (var item in set1.Difference(set2))
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(" SymetricDifference");
+            foreach (var item in set1.SymetricDifference(set2))
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine(" Subset");
+            Console.WriteLine(set1.Subset(set2));
+
             #endregion
         }
     }

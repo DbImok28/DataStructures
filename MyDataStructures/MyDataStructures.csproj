@@ -53,6 +53,7 @@
     <Compile Include="Model\Queue\LinkedDeque.cs" />
     <Compile Include="Model\Queue\LinkedQueue.cs" />
     <Compile Include="Model\Queue\Queue.cs" />
+    <Compile Include="Model\Set\Set.cs" />
     <Compile Include="Model\Stack\BaseStack.cs" />
     <Compile Include="Model\Stack\LinkedStack.cs" />
     <Compile Include="Model\Stack\ArrayStack.cs" />
