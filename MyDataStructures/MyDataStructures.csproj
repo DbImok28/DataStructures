@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\HashTable\HashTable.cs" />
+    <Compile Include="Model\HashTable\HashTableItem.cs" />
     <Compile Include="Model\LinkedList\CircularLinkedList.cs" />
     <Compile Include="Model\LinkedList\DoublyLinkedList.cs" />
     <Compile Include="Model\LinkedList\DoublyLinkedListItem.cs" />

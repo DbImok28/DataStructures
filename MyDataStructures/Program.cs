@@ -1,5 +1,6 @@
 ﻿using System;
 using MyDataStructures.Model;
+using MyDataStructures.Model.HashTable;
 using MyDataStructures.Model.LinkedList;
 using MyDataStructures.Model.Queue;
 using MyDataStructures.Model.Set;
@@ -201,14 +202,18 @@ namespace MyDataStructures
             #endregion
             #region Set
             Console.WriteLine("Set");
-            var set1 = new Set<int>();
-            set1.Add(1);
-            set1.Add(2);
-            set1.Add(3);
-            var set2 = new Set<int>();
-            set2.Add(2);
-            set2.Add(3);
-            set2.Add(4);
+            var set1 = new Set<int>
+            {
+                1,
+                2,
+                3
+            };
+            var set2 = new Set<int>
+            {
+                2,
+                3,
+                4
+            };
             Console.WriteLine(" Union");
             foreach (var item in set1.Union(set2))
             {
@@ -232,6 +237,16 @@ namespace MyDataStructures
             Console.WriteLine(" Subset");
             Console.WriteLine(set1.Subset(set2));
 
+            #endregion
+            #region HashTable
+            Console.WriteLine("HashTable");
+            var HashTable1 = new HashTable<string>(20);
+            HashTable1.Add("Hash 1");
+            HashTable1.Add("Hash 2");
+            HashTable1.Add("Hash 2.2");
+            HashTable1.Add("Hash 5");
+            Console.WriteLine(HashTable1.Search("Hash 2.2"));
+            Console.WriteLine(HashTable1.Search("Hash 3"));
             #endregion
         }
     }
