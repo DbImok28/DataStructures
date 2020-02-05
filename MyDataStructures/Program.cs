@@ -2,6 +2,7 @@
 using MyDataStructures.Model;
 using MyDataStructures.Model.HashTable;
 using MyDataStructures.Model.LinkedList;
+using MyDataStructures.Model.Map;
 using MyDataStructures.Model.Queue;
 using MyDataStructures.Model.Set;
 using MyDataStructures.Model.Stack;
@@ -248,6 +249,25 @@ namespace MyDataStructures
             Console.WriteLine(HashTable1.Search("Hash 2.2"));
             Console.WriteLine(HashTable1.Search("Hash 3"));
             #endregion
+            #region Map
+            Console.WriteLine("Map");
+            var map1 = new Map<int, int>(5)
+            {
+                { 1, 1 },
+                { 2, 2 },
+                { 3, 3 },
+                { 4, 4 },
+                { 8, 8 }
+            };
+            map1.Remove(2);
+            map1.Add(9, 9);
+            foreach (var item in map1)
+            {
+                Console.WriteLine(item);
+            }
+            //Console.WriteLine(map1.Search(8));
+            #endregion
+            
         }
     }
 }
