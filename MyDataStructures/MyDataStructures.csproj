@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Tree\BinarySearchTree.cs" />
+    <Compile Include="Model\Tree\BinarySearchTreeNode.cs" />
     <Compile Include="Model\HashTable\HashTable.cs" />
     <Compile Include="Model\HashTable\HashTableItem.cs" />
     <Compile Include="Model\LinkedList\CircularLinkedList.cs" />

@@ -6,6 +6,7 @@ using MyDataStructures.Model.Map;
 using MyDataStructures.Model.Queue;
 using MyDataStructures.Model.Set;
 using MyDataStructures.Model.Stack;
+using MyDataStructures.Model.Tree;
 
 namespace MyDataStructures
 {
@@ -267,7 +268,47 @@ namespace MyDataStructures
             }
             //Console.WriteLine(map1.Search(8));
             #endregion
-            
+            #region Tree
+            #region BinarySearchTree
+            Console.WriteLine("BinarySearchTree");
+            var binarySearchTree1 = new BinarySearchTree<int>
+            {
+                3,
+                5,
+                1,
+                2,
+                4,
+                0
+            };
+            //        3
+            //     /     \
+            //    1       5
+            //   / \     /
+            //  0   2   4
+            foreach (var item in binarySearchTree1.Preorder())
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("-Preorder");
+            foreach (var item in binarySearchTree1.Postorder())
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("-Postorder");
+            foreach (var item in binarySearchTree1.Inorder())
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("-Inorder");
+            var binarySearchTree2 = binarySearchTree1.Copy();
+            binarySearchTree1.Add(99);
+            foreach (var item in binarySearchTree2.Inorder())
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("-CopyInorder");
+            #endregion
+            #endregion
         }
     }
 }
