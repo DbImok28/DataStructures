@@ -65,8 +65,10 @@
     <Compile Include="Model\Stack\ArrayStack.cs" />
     <Compile Include="Model\Stack\Stack.cs" />
     <Compile Include="Model\Stack\StackItem.cs" />
+    <Compile Include="Model\Tree\TrieNode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Tree\Trie.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

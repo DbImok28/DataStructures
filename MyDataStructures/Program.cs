@@ -308,6 +308,22 @@ namespace MyDataStructures
             }
             Console.WriteLine("-CopyInorder");
             #endregion
+            #region Trie
+            Console.WriteLine("Trie");
+            var trie1 = new Trie<int>();
+            trie1.Add("привет",2);
+            trie1.Add("лимон", 1);
+            trie1.Add("призрак", 1);
+            trie1.Add("патриот", 1);
+            trie1.Add("суп", 3);
+            trie1.Add("пшеница", 3);
+            trie1.Add("кактус", 2);
+            trie1.Add("претензия", 1);
+            trie1.Add("окно", 1);
+            trie1.Remove("привет");
+            Console.WriteLine("привет - " + trie1.Search("привет"));
+            Console.WriteLine("кактус - " + trie1.Search("кактус"));
+            #endregion
             #endregion
         }
     }
