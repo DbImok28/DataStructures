@@ -1,6 +1,8 @@
 ﻿using System;
 using MyDataStructures.Model;
+using MyDataStructures.Model.Graph;
 using MyDataStructures.Model.HashTable;
+using MyDataStructures.Model.Heap;
 using MyDataStructures.Model.LinkedList;
 using MyDataStructures.Model.Map;
 using MyDataStructures.Model.Queue;
@@ -145,10 +147,10 @@ namespace MyDataStructures
             #endregion
             #region ArrayQueue
             Console.WriteLine("ArrayQueue");
-            var ArrayQueue1 = new ArrayQueue<int>(2,2);
+            var ArrayQueue1 = new ArrayQueue<int>(2, 2);
             ArrayQueue1.Enqueue(1);
             ArrayQueue1.Enqueue(2);
-            ArrayQueue1.Enqueue(3);            
+            ArrayQueue1.Enqueue(3);
             ArrayQueue1.Enqueue(4);
             Console.WriteLine("Capacity -> " + ArrayQueue1.Capacity);
             Console.WriteLine(ArrayQueue1.Dequeue());
@@ -311,7 +313,7 @@ namespace MyDataStructures
             #region Trie
             Console.WriteLine("Trie");
             var trie1 = new Trie<int>();
-            trie1.Add("привет",2);
+            trie1.Add("привет", 2);
             trie1.Add("лимон", 1);
             trie1.Add("призрак", 1);
             trie1.Add("патриот", 1);
@@ -325,6 +327,99 @@ namespace MyDataStructures
             Console.WriteLine("кактус - " + trie1.Search("кактус"));
             #endregion
             #endregion
+            #region Heap
+            Console.WriteLine("Heap");
+            var rnd = new Random();
+            var list3 = new System.Collections.Generic.List<int>();
+            for (int i = 0; i < 10; i++)
+            {
+                list3.Add(rnd.Next(-100, 100));
+            }
+            var heap1 = new Heap<int>(list3);
+
+            foreach (var item in heap1)
+            {
+                Console.WriteLine(item);
+            }
+            #endregion
+            #region Graph
+            Console.WriteLine("Graph");
+            var graph1 = new Graph<int>();
+
+            #region initGraph1
+            var v0 = new GraphVertex<int>(0, 0);
+            var v1 = new GraphVertex<int>(1, 1);
+            var v2 = new GraphVertex<int>(2, 2);
+            var v3 = new GraphVertex<int>(3, 3);
+            var v4 = new GraphVertex<int>(4, 4);
+            var v5 = new GraphVertex<int>(5, 5);
+            var v6 = new GraphVertex<int>(6, 6);
+            var v7 = new GraphVertex<int>(7, 7);
+            graph1.Add(v0);
+            graph1.Add(v1);
+            graph1.Add(v2);
+            graph1.Add(v3);
+            graph1.Add(v4);
+            graph1.Add(v5);
+            graph1.Add(v6);
+            graph1.Add(v7);
+            graph1.Add(new GraphEdge<int>(v1, v2, 8));
+            graph1.Add(new GraphEdge<int>(v1, v3, 5));
+            graph1.Add(new GraphEdge<int>(v3, v4, 9));
+            graph1.Add(new GraphEdge<int>(v2, v5, 7));
+            graph1.Add(new GraphEdge<int>(v2, v6, 4));
+            graph1.Add(new GraphEdge<int>(v5, v6, 1));
+            graph1.Add(new GraphEdge<int>(v6, v5, 1));
+            #endregion
+
+            PrintGraphMatrix(graph1);
+            if (graph1.Wave(v1, v2))
+            {
+                Console.Write("v2 - ");
+                foreach (var vertex in graph1.GetVertexList(v2))
+                {
+                    Console.Write(vertex + " ");
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("v2 - NoContain");
+            }
+            #endregion
+        }
+        static void PrintGraphMatrix<T>(Graph<T> graph)
+        {
+            var matrix = graph.GetMatrix();
+            Console.WriteLine();
+            Console.Write("   ");
+            for (int i = 0; i < graph.VertexCount; i++)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+            Console.Write("  -");
+            for (int i = 0; i < graph.VertexCount; i++)
+            {
+                Console.Write("--");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < graph.VertexCount; i++)
+            {
+                Console.Write(i + "| ");
+                for (int f = 0; f < graph.VertexCount; f++)
+                {
+                    Console.Write(matrix[i, f]);
+                    Console.Write(" ");
+                }
+                Console.WriteLine("|");
+            }
+            Console.Write("  -");
+            for (int i = 0; i < graph.VertexCount; i++)
+            {
+                Console.Write("--");
+            }
+            Console.WriteLine();
         }
     }
 }

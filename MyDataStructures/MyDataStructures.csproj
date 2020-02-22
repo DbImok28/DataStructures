@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Graph\Graph.cs" />
+    <Compile Include="Model\Graph\GraphEdge.cs" />
+    <Compile Include="Model\Graph\GraphVertex.cs" />
+    <Compile Include="Model\Heap\Heap.cs" />
     <Compile Include="Model\Tree\BinarySearchTree.cs" />
     <Compile Include="Model\Tree\BinarySearchTreeNode.cs" />
     <Compile Include="Model\HashTable\HashTable.cs" />

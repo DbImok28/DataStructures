@@ -84,7 +84,7 @@ namespace MyDataStructures.Model.Set
         {
             return setB.Items.All(i => Items.Contains(i));
         }
-
+        
         public IEnumerator GetEnumerator()
         {
             return Items.GetEnumerator();
